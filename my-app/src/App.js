@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const PassportGenerator = () => {
-  const [passportNumber, setPassportNumber] = useState('');
+  const [passportNumber, setPassportNumber] = useState([]);
 
   const generateRandomString = (length) => {
    let result = '';
@@ -14,13 +14,12 @@ const PassportGenerator = () => {
   };
                               
   const generatePassportNumber = () => {
-    const  newPassportNumber = setPassportNumber("");
+    const  newPassportNumber = generateRandomString("10");
     setPassportNumber(newPassportNumber);
   };
 
   return (
     <div >
-      <input type='number' value={setPassportNumber} onClick={setPassportNumber} ></input>
       <button onClick={generatePassportNumber}>Kod Yaz</button>
       <p>Kodun: {passportNumber}</p>
     </div>
@@ -28,3 +27,9 @@ const PassportGenerator = () => {
 };
 
 export default PassportGenerator;
+
+
+
+
+
+
